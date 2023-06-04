@@ -41,8 +41,7 @@ To run the Jupyter Notebook and reproduce the results, ensure the following depe
 - NumPy
 - Pandas
 - Scikit-learn
-- BeautifulSoup (for web scraping)
-- Requests (for web scraping)
+- Selenium (for web scraping)
 
 Please install the necessary dependencies before running the notebook.
 
