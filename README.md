@@ -1,26 +1,64 @@
 # Flight Price Prediction
 
-This project focuses on predicting flight prices using machine learning techniques. It involves scraping flight data from a website, extracting relevant features, and training a model to make accurate price predictions. The goal is to help users estimate flight costs and make informed travel decisions.
+This project focuses on predicting flight prices using a machine learning model. The process involves scraping flight data from a website, performing feature engineering, and training a Random Forest Regressor to make price predictions.
 
-## Project Overview
+## Data Collection
 
-The project follows the following steps:
+Flight data is scraped from a website using web scraping techniques. The data includes various features such as departure city, arrival city, departure date, arrival date, airline, and other relevant information. By collecting a substantial amount of flight data, we aim to capture patterns and trends that influence flight prices.
 
-1. **Data Collection:** Flight data is scraped from a flights website using the Selenium library. The scraped information includes departure time, arrival time, day of the flight, flight duration, number of passengers, number of stops, and the timestamp of scraping. This data is stored in a structured format, such as a pandas DataFrame, for further analysis.
+## Feature Engineering
 
-2. **Feature Engineering:** Additional features are derived from the available data to improve the predictive power of the model. The geolocator library is utilized to calculate the distance between the departure and arrival airports, which is then included as a feature in the DataFrame. Furthermore, the countries of the arrival airports are mapped to sub-regions in the world, allowing the determination of low, mid, or high seasonality on the flight date. This seasonality information is also added as a feature.
+Feature engineering plays a crucial role in developing an effective machine learning model. In this project, several feature engineering techniques are employed to enhance the predictive power of the model. Some of these techniques include:
 
-3. **Machine Learning Model:** After preprocessing the data and engineering the necessary features, a machine learning model is trained on the available dataset. Various algorithms and techniques, such as regression or ensemble methods, can be explored to achieve accurate flight price predictions. The model learns the patterns and relationships within the data to estimate flight prices based on the input features.
+- **Date-Time Feature Extraction**: Extracting meaningful information from the date and time fields, such as day of the week, month, hour, or any other relevant features that can capture seasonality or time-related patterns.
 
-4. **Evaluation and Deployment:** The trained model is evaluated using appropriate evaluation metrics to assess its performance and generalization ability. The model's accuracy and predictive capabilities are assessed to ensure reliable flight price predictions. Once satisfied with the model's performance, it can be deployed to make predictions on new, unseen flight data.
+- **Categorical Feature Encoding**: Converting categorical features, such as airlines or departure/arrival cities, into numerical representations using techniques like one-hot encoding or label encoding. This allows the model to interpret and utilize categorical data effectively.
 
-## Project Structure
+- **Feature Scaling**: Scaling numerical features to a common scale, such as using standardization or normalization, to ensure that no single feature dominates the model's learning process.
 
-The project structure is organized as follows:
+These feature engineering techniques help to transform the raw flight data into a suitable format for training the machine learning model.
 
-- `data/`: This directory contains the scraped flight data stored in a structured format, Excel.
-- `notebooks/`: This directory contains Jupyter notebooks providing detailed explanations and step-by-step implementations of the project.
-- `scripts/`: This directory contains Python scripts for data preprocessing, feature engineering, model training, and prediction.
-- `models/`: This directory contains the trained machine learning models or serialized model objects.
-- `requirements.txt`: This file lists the required Python libraries and versions to reproduce the project environment.
+## Machine Learning Model
 
+The machine learning model used in this project is the Random Forest Regressor. Random Forest is an ensemble learning algorithm that combines multiple decision trees to make predictions. In the case of regression tasks, such as predicting flight prices, Random Forest Regressor proves to be effective in capturing complex relationships between features and the target variable.
+
+## Model Evaluation and Performance
+
+The trained Random Forest Regressor model is evaluated using appropriate performance metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), or R-squared. These metrics provide insights into the model's accuracy and ability to generalize to unseen flight data.
+
+## Repository Contents
+
+- `flight_price_prediction.ipynb`: A Jupyter Notebook containing the Python code and step-by-step explanation for scraping flight data, performing feature engineering, and training the machine learning model.
+- `flight_data.csv`: The scraped flight data used for training and testing the model.
+- `README.md`: This file, providing an overview of the project.
+
+## Requirements
+
+To run the Jupyter Notebook and reproduce the results, ensure the following dependencies are installed:
+
+- Python 3.x
+- Jupyter Notebook
+- NumPy
+- Pandas
+- Scikit-learn
+- BeautifulSoup (for web scraping)
+- Requests (for web scraping)
+
+Please install the necessary dependencies before running the notebook.
+
+## Usage
+
+Follow the steps below to run the Jupyter Notebook and predict flight prices using the trained model:
+
+1. Clone this repository to your local machine or download the files manually.
+2. Install the required dependencies as mentioned above.
+3. Open the `flight_price_prediction.ipynb` notebook using Jupyter Notebook.
+4. Run each cell in the notebook sequentially to replicate the data scraping, feature engineering, and model training process.
+5. Modify the code and experiment with different feature engineering techniques or machine learning algorithms as desired.
+6. Use the trained model to predict flight prices for new data or evaluate its performance on test data.
+
+Basic knowledge of machine learning concepts, Python programming, and web scraping techniques is recommended to effectively utilize this notebook.
+
+## Conclusion
+
+This project demonstrates the application of machine learning techniques in predicting flight prices. By scraping flight data, performing feature engineering,
