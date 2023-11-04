@@ -61,3 +61,7 @@ Basic knowledge of machine learning concepts, Python programming, and web scrapi
 ## Conclusion
 
 This project demonstrates the application of machine learning techniques in predicting flight prices. By scraping flight data, performing feature engineering,
+
+### Learnings
+- Plan when to scrape data to balance the dataset
+
